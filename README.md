@@ -14,11 +14,6 @@ The purpose of this project is to display information within a School District. 
 7. Score results by school type
 
 ## Results
-My first draft of the code included score for 9th grade Thomas High Students.  Below are the results for district and school summaries:
-
-<img width="971" alt="District_Summary_Before" src="https://user-images.githubusercontent.com/63257696/118317440-0f691000-b4c6-11eb-821b-8d58d395e4c8.png">
-
-<img width="997" alt="School_Summary_Before" src="https://user-images.githubusercontent.com/63257696/118317454-12640080-b4c6-11eb-9ad4-2e251eed6e72.png">
 
 I started with cleaning the data and replacing all 9th grade Thomas High School scores with "NaNs" so their names would be included in the analysis, but their score would not.  I did this by creating a series of all 9th grade Thomas High Students, and looping through the series to replace all the scores with "NaNs".  After confirming the all 9th grade Thomas scores were "NaNs", I proceded with the analysis. 
 
@@ -33,13 +28,15 @@ I started with cleaning the data and replacing all 9th grade Thomas High School 
 
 <img width="1014" alt="School_Summary_After" src="https://user-images.githubusercontent.com/63257696/118317522-2b6cb180-b4c6-11eb-9a1f-66a4f9f081e9.png">
  <br /> 
- 
+
  The scores for Thomas High changed after we removed the 9th grade scores.  You can see that again, the values in each category dropped by a few percentage points. 
  
+Making the altercation to only showing the percentage passing for 10th-12th grade is important because without this, the percentage passing would have shown much lower percentages due that the total count of students remained the same, the count of students with valid scores is lower.  The percentages would have been in the 60s range if we did not take into account this altercation.
 
-3. From the school summary, I was able to get the top 5 and bottom 5 performing schools, by sorting through data frame.  
 
-4.  Ifiltered through the school data and set it equal to new variables in order to get the avergae scores for both reading and math by grade.  Despite the changes in data we made, Thomas High remains in the second spot for highest performing schools.
+3. From the school summary, I was able to get the top 5 and bottom 5 performing schools, by sorting through data frame.  Despite the changes in Thomas High, the school still remained in the second spot for top performing schools.
+
+4.  I filtered through the school data and set it equal to new variables in order to get the avergae scores for both reading and math by grade.  
 
 5. I put the school data in bins based off the amount of budgeting each school has.  I used the cut function to put the school data in these the "spending bins" and show the average score and percentages passing per each spending bin.  
 
@@ -51,5 +48,5 @@ I started with cleaning the data and replacing all 9th grade Thomas High School 
 
 ## Summary
 
-Changing the 9th grade Thomas High score data was a small, but important part of my analysis that changes the results.  Replacing the data was "Nans" changed how the average scores for math and reading were calculated for the district as a whole and for Thomas High.  It also altered how the percentages passing math and reading were calculated.  Nulling the data caused different results than what we would have seen if the score data was left alone.
+Changing the 9th grade Thomas High score data was a small, but important part of my analysis that changed the results.  Replacing the data was "Nans" changed how the average scores for math and reading were calculated for the district as a whole and for Thomas High.  It also altered how the percentages passing math and reading were calculated.   When working with nulled data, it is import to make the appropraite altercations for mathmatical calculation because the nulled data can affect the way metrics are calcuated.  We saw in the school summary that the passing percentages for Thomas High would have incorrectly been shown as lower perentages if we did not take into account that we were only looking for score data from 10th-12th grade.  The percentage calculation would have been done with the entire school count, including ninth graders.  Because the ninth grade data is invalid, it would not pull into the calculation, therefore providing inaccurate results. 
 
